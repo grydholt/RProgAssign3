@@ -17,11 +17,6 @@ best <- function(state, outcome) {
                 stop("invalid outcome")
         }
         
-        
-        ## Read outcome data
-        ## Check that state and outcome are valid
-        ## Return hospital name in that state with lowest 30-day death
-        ## rate
         narrow = data[, c("State", "Hospital.Name", column)]
         narrow[,column] = suppressWarnings(as.numeric(narrow[,column]))
         narrow = narrow[narrow$State==state,]
